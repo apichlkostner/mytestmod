@@ -1,0 +1,4 @@
+item.ItemTable.name=Tisch
+tile.BlockTable.name=TischBlock
+item.Baguette.name=Baguette
+item.BaguetteRaw.name=rohes Baguette
