@@ -1,4 +1,4 @@
-package block;
+package local.apichlkostner.myminecraftmod.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

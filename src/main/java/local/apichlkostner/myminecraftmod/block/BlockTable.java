@@ -1,6 +1,6 @@
-package block;
+package local.apichlkostner.myminecraftmod.block;
 
-import config.Constants;
+import local.apichlkostner.myminecraftmod.config.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;

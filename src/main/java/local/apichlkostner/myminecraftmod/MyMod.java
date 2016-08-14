@@ -1,8 +1,5 @@
 package local.apichlkostner.myminecraftmod;
 
-import block.BlockTable;
-import block.MyModBlock;
-import config.Constants;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -11,7 +8,10 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import item.MyModItem;
+import local.apichlkostner.myminecraftmod.block.BlockTable;
+import local.apichlkostner.myminecraftmod.block.MyModBlock;
+import local.apichlkostner.myminecraftmod.config.Constants;
+import local.apichlkostner.myminecraftmod.item.MyModItem;
 import local.apichlkostner.myminecraftmod.proxy.IProxy;
 import local.apichlkostner.myminecraftmod.registry.BlockRegistry;
 import local.apichlkostner.myminecraftmod.registry.ItemRegistry;

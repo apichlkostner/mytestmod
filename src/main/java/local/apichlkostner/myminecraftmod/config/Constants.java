@@ -1,4 +1,4 @@
-package config;
+package local.apichlkostner.myminecraftmod.config;
 
 import net.minecraft.block.material.Material;
 

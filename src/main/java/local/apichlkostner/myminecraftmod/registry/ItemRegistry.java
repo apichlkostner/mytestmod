@@ -1,8 +1,8 @@
 package local.apichlkostner.myminecraftmod.registry;
 
-import item.ItemTable;
-import item.MyModItem;
 import local.apichlkostner.myminecraftmod.MyMod;
+import local.apichlkostner.myminecraftmod.item.ItemTable;
+import local.apichlkostner.myminecraftmod.item.MyModItem;
 import net.minecraft.item.Item;
 
 public class ItemRegistry {

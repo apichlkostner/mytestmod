@@ -1,6 +1,6 @@
-package item;
+package local.apichlkostner.myminecraftmod.item;
 
-import config.Constants;
+import local.apichlkostner.myminecraftmod.config.Constants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

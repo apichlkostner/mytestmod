@@ -1,4 +1,4 @@
-package item;
+package local.apichlkostner.myminecraftmod.item;
 
 import net.minecraft.item.Item;
 
