@@ -1,6 +1,7 @@
 package local.apichlkostner.myminecraftmod.block;
 
 import local.apichlkostner.myminecraftmod.config.Constants;
+import local.apichlkostner.myminecraftmod.registry.BlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,8 +14,8 @@ public class BlockTable extends MyModBlock {
 
 	@Override
 	public void init() {
-		setCreativeTab(CreativeTabs.tabAllSearch);
 		setBlockName(Constants.BlockTableName);
+		setCreativeTab(CreativeTabs.tabAllSearch);		
 		setBlockTextureName(Constants.BlockTableTexture);
 	}
 

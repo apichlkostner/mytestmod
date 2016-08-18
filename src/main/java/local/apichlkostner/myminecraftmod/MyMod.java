@@ -36,7 +36,7 @@ public class MyMod {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		// shapeless craftin
+		// shapeless crafting
 		ItemStack stackWool = new ItemStack(Blocks.wool);
 		ItemStack stackWeb = new ItemStack(Blocks.web, 5);
 		
@@ -56,13 +56,13 @@ public class MyMod {
 		ItemStack stackDiamonds = new ItemStack(Items.diamond);
 		ItemStack stackCoalBlock = new ItemStack(Blocks.coal_block);
 		GameRegistry.addSmelting(stackDiamonds, stackCoalBlock, 1000);
-		
-		for (MyModItem item : ItemRegistry.items) {
+	
+		for (MyModItem item : ItemRegistry.getInstance().items) {
 			item.init();
 			GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
 		}
 		
-		for (MyModBlock block : BlockRegistry.blocks) {
+		for (MyModBlock block : BlockRegistry.getInstance().blocks) {
 			block.init();
 			GameRegistry.registerBlock(block, block.getUnlocalizedName().substring(5));
 		}
