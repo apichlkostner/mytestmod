@@ -9,10 +9,16 @@ public class ItemTable extends MyModItem {
 		
 	}
 	
+	@Override
 	public void init() {
 		this.setUnlocalizedName(Constants.ItemTableName);
 		this.setTextureName(Constants.ItemTableTexture);
 		this.setCreativeTab(CreativeTabs.tabAllSearch);
+	}
+
+	@Override
+	public void registerReceipe() {
+		// no receipe		
 	}
 	
 	

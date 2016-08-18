@@ -1,4 +1,6 @@
 item.ItemTable.name=Table
+item.SteelIngot.name=Steel ingot
+item.Baguette.name=Baguette
+item.BaguetteRaw.name=raw Baguette
 tile.BlockTable.name=TableBlock
-tile.Baguette.name=Baguette
-tile.BaguetteRaw.name=raw Baguette
+item.SteelPickaxe.name=Steel pickaxe

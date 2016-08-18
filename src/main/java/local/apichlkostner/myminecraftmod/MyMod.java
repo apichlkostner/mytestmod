@@ -11,6 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import local.apichlkostner.myminecraftmod.block.BlockTable;
 import local.apichlkostner.myminecraftmod.block.MyModBlock;
 import local.apichlkostner.myminecraftmod.config.Constants;
+import local.apichlkostner.myminecraftmod.item.ItemSteelPickaxe;
 import local.apichlkostner.myminecraftmod.item.MyModItem;
 import local.apichlkostner.myminecraftmod.proxy.IProxy;
 import local.apichlkostner.myminecraftmod.registry.BlockRegistry;
@@ -22,6 +23,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
 
 @Mod(modid = Constants.MODID, name = Constants.MODNAME, version = Constants.VERSION)
 public class MyMod {
@@ -33,10 +35,13 @@ public class MyMod {
 	
 	private static Baguette baguette;
 	private static BaguetteRaw baguetteRaw;
+	private static ItemSteelPickaxe steelPickaxe;
+	
+	
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		// shapeless craftin
+		// shapeless crafting
 		ItemStack stackWool = new ItemStack(Blocks.wool);
 		ItemStack stackWeb = new ItemStack(Blocks.web, 5);
 		
@@ -61,6 +66,10 @@ public class MyMod {
 			item.init();
 			GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
 		}
+		// init SteelPickaxe
+		ItemSteelPickaxe item = ItemRegistry.itemSteelPickaxe;
+		item.init();
+		GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
 		
 		for (MyModBlock block : BlockRegistry.blocks) {
 			block.init();
@@ -69,13 +78,17 @@ public class MyMod {
 		
 		baguetteRaw = new BaguetteRaw();
 		baguette = new Baguette();
-		
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		baguetteRaw.registerReceipe();
 		baguette.registerReceipe(baguetteRaw);
+		
+		for (MyModItem item : ItemRegistry.items) {
+			item.registerReceipe();
+		}
+		ItemRegistry.itemSteelPickaxe.registerReceipe();
 	}
 	
 	@EventHandler

@@ -14,7 +14,15 @@ public class Constants {
 	public static final String ItemTableName = "ItemTable";
 	public static final String ItemTableTexture = "mymod:itemtable";
 	
+	public static final String ItemSteelIngotName = "SteelIngot";
+	public static final String ItemSteelIngotTexture = MODID+":itemsteelingot";
+	
+	public static final String ItemSteelPickaxeName = "SteelPickaxe";
+	public static final String ItemSteelPickaxeTexture = "mymod:itemsteelpickaxe";
+	
 	public static final String BlockTableName = "BlockTable";
 	public static final String BlockTableTexture = "mymod:blocktable";
 	public static final Material BlockTableMaterial = Material.wood;
+	
+	
 }
