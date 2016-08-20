@@ -9,10 +9,10 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import local.apichlkostner.myminecraftmod.block.BlockTable;
-import local.apichlkostner.myminecraftmod.block.MyModBlock;
+import local.apichlkostner.myminecraftmod.block.IBlock;
 import local.apichlkostner.myminecraftmod.config.Constants;
+import local.apichlkostner.myminecraftmod.item.IItem;
 import local.apichlkostner.myminecraftmod.item.ItemSteelPickaxe;
-import local.apichlkostner.myminecraftmod.item.MyModItem;
 import local.apichlkostner.myminecraftmod.proxy.IProxy;
 import local.apichlkostner.myminecraftmod.registry.BlockRegistry;
 import local.apichlkostner.myminecraftmod.registry.ItemRegistry;
@@ -33,12 +33,6 @@ public class MyMod {
 	@Instance(Constants.MODNAME)
 	public static MyMod instance;
 	
-	private static Baguette baguette;
-	private static BaguetteRaw baguetteRaw;
-	private static ItemSteelPickaxe steelPickaxe;
-	
-	
-
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		// shapeless crafting
@@ -62,33 +56,20 @@ public class MyMod {
 		ItemStack stackCoalBlock = new ItemStack(Blocks.coal_block);
 		GameRegistry.addSmelting(stackDiamonds, stackCoalBlock, 1000);
 		
-		for (MyModItem item : ItemRegistry.items) {
+		for (IItem item : ItemRegistry.items) {
 			item.init();
-			GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
 		}
-		// init SteelPickaxe
-		ItemSteelPickaxe item = ItemRegistry.itemSteelPickaxe;
-		item.init();
-		GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
 		
-		for (MyModBlock block : BlockRegistry.blocks) {
+		for (IBlock block : BlockRegistry.blocks) {
 			block.init();
-			GameRegistry.registerBlock(block, block.getUnlocalizedName().substring(5));
 		}
-		
-		baguetteRaw = new BaguetteRaw();
-		baguette = new Baguette();
 	}
 	
 	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		baguetteRaw.registerReceipe();
-		baguette.registerReceipe(baguetteRaw);
-		
-		for (MyModItem item : ItemRegistry.items) {
+	public void init(FMLInitializationEvent event) {		
+		for (IItem item : ItemRegistry.items) {
 			item.registerReceipe();
 		}
-		ItemRegistry.itemSteelPickaxe.registerReceipe();
 	}
 	
 	@EventHandler

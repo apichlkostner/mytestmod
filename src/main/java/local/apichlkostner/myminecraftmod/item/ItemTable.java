@@ -1,19 +1,21 @@
 package local.apichlkostner.myminecraftmod.item;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import local.apichlkostner.myminecraftmod.config.Constants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ItemTable extends MyModItem {
+public class ItemTable extends Item implements IItem {
 	public ItemTable() {
 		
 	}
 	
 	@Override
 	public void init() {
-		this.setUnlocalizedName(Constants.ItemTableName);
-		this.setTextureName(Constants.ItemTableTexture);
-		this.setCreativeTab(CreativeTabs.tabAllSearch);
+		setUnlocalizedName(Constants.ItemTableName);
+		setTextureName(Constants.ItemTableTexture);
+		setCreativeTab(CreativeTabs.tabAllSearch);
+		GameRegistry.registerItem(this, getUnlocalizedName().substring(5));
 	}
 
 	@Override

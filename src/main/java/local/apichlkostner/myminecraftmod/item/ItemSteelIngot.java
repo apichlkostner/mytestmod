@@ -5,9 +5,10 @@ import local.apichlkostner.myminecraftmod.config.Constants;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class ItemSteelIngot extends MyModItem {
+public class ItemSteelIngot extends Item implements IItem {
 
 	public ItemSteelIngot() {
 		
@@ -15,9 +16,10 @@ public class ItemSteelIngot extends MyModItem {
 	
 	@Override
 	public void init() {
-		this.setUnlocalizedName(Constants.ItemSteelIngotName);
-		this.setTextureName(Constants.ItemSteelIngotTexture);
-		this.setCreativeTab(CreativeTabs.tabAllSearch);
+		setUnlocalizedName(Constants.ItemSteelIngotName);
+		setTextureName(Constants.ItemSteelIngotTexture);
+		setCreativeTab(CreativeTabs.tabAllSearch);
+		GameRegistry.registerItem(this, getUnlocalizedName().substring(5));
 	}
 
 	@Override
