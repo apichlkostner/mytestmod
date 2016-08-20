@@ -1,7 +1,7 @@
-package local.apichlkostner.myminecraftmod;
+package local.apichlkostner.myminecraftmod.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import local.apichlkostner.myminecraftmod.item.IItem;
+import local.apichlkostner.myminecraftmod.config.Constants;
 import local.apichlkostner.myminecraftmod.registry.ItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -18,8 +18,8 @@ public class Baguette extends ItemFood implements IItem {
 	
 	@Override
 	public void init() {
-		setUnlocalizedName("Baguette");
-		setTextureName("mymod:baguette");
+		setUnlocalizedName(Constants.BaguetteName);
+		setTextureName(Constants.BaguetteTexture);
 		GameRegistry.registerItem(this, this.getUnlocalizedName());
 	}
 	

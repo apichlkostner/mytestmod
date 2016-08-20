@@ -25,8 +25,8 @@ public class ItemSteelIngot extends Item implements IItem {
 	@Override
 	public void registerReceipe() {
 		ItemStack stackSteelIngot = new ItemStack(this);
-		GameRegistry.addRecipe(stackSteelIngot, new Object[]{"iii", " g ", "iii",
-				'i', Items.iron_ingot, 'g', Items.gold_ingot});
+		GameRegistry.addRecipe(stackSteelIngot, new Object[]{"iii", "rgr", "iii",
+				'i', Items.iron_ingot, 'g', Items.gold_ingot, 'r', Items.redstone});
 		
 	}
 }

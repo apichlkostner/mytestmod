@@ -11,17 +11,43 @@ public class Constants {
 	public static final String CLIENTSIDE = MOD_PATH + ".proxy.ClientProxy";
 	public static final String SERVERSIDE = MOD_PATH + ".proxy.ServerProxy";
 	
+	public static final int ArmorMaterialDurability = 30;
+	public static final int[] ArmorMaterialReductionAmounts = {2, 6, 5, 2}; 
+	public static final int ArmorMaterialEnchantability = 9;
+	
+	public static final String[] ItemSteelArmorModel = {
+			MODID + ":" + "textures/models/armor/steel_layer_1.png",
+			MODID + ":" + "textures/models/armor/steel_layer_2.png",
+	};
+	
+	public static final String[] ItemSteelArmorName = {
+			"SteelArmorHelmet",	"SteelArmorPlate", "SteelArmorLeggins", "SteelArmorBoots"
+	};
+	
+	public static final String[] ItemSteelArmorTexture = {
+			MODID + ":" + "itemsteelhelmet",
+			MODID + ":" + "itemsteelplate",
+			MODID + ":" + "itemsteelleggings",
+			MODID + ":" + "itemsteelboots"
+	};
+	
 	public static final String ItemTableName = "ItemTable";
-	public static final String ItemTableTexture = "mymod:itemtable";
+	public static final String ItemTableTexture = MODID + ":" + "itemtable";
 	
 	public static final String ItemSteelIngotName = "SteelIngot";
-	public static final String ItemSteelIngotTexture = MODID+":itemsteelingot";
+	public static final String ItemSteelIngotTexture = MODID + ":" + "itemsteelingot";
 	
 	public static final String ItemSteelPickaxeName = "SteelPickaxe";
-	public static final String ItemSteelPickaxeTexture = "mymod:itemsteelpickaxe";
+	public static final String ItemSteelPickaxeTexture = MODID + ":" + "itemsteelpickaxe";
+	
+	public static final String BaguetteName = "Baguette";
+	public static final String BaguetteTexture = MODID + ":" + "baguette";
+	
+	public static final String BaguetteRawName = "BaguetteRaw";
+	public static final String BaguetteRawTexture = MODID + ":" + "baguetteraw";
 	
 	public static final String BlockTableName = "BlockTable";
-	public static final String BlockTableTexture = "mymod:blocktable";
+	public static final String BlockTableTexture = MODID + ":" + "blocktable";
 	public static final Material BlockTableMaterial = Material.wood;
 	
 	

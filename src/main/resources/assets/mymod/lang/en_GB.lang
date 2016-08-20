@@ -1,6 +1,10 @@
 item.ItemTable.name=Table
-item.SteelIngot.name=Steel ingot
+item.SteelIngot.name=Redstone steel ingot
 item.Baguette.name=Baguette
 item.BaguetteRaw.name=raw Baguette
 tile.BlockTable.name=TableBlock
-item.SteelPickaxe.name=Steel pickaxe
+item.SteelPickaxe.name=Redstone steel pickaxe
+item.SteelArmorHelmet.name=Redstone steel helmet
+item.SteelArmorPlate.name=Redstone steel plate
+item.SteelArmorLeggins.name=Redstone steel leggings
+item.SteelArmorBoots.name=Redstone steel boots
