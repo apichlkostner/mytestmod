@@ -33,15 +33,15 @@ public class ItemSteelArmor extends ItemArmor implements IItem {
 	@Override
 	public void registerReceipe() {
 		ItemStack stackSteelArmor = new ItemStack(this);
-		//GameRegistry.addRecipe(stackSteelArmor, receipe[0]);
+		
 		GameRegistry.addRecipe(stackSteelArmor, new Object[]{receipe[armorType], 's', ItemRegistry.itemSteelIngot});
 	}
 	
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-		int ret = (armorType == 2) ? 1 : 0;
+		int i = (armorType == 2) ? 1 : 0;
 		
-		return Constants.ItemSteelArmorModel[ret];
+		return Constants.ItemSteelArmorModel[i];
 	}
 
 }
