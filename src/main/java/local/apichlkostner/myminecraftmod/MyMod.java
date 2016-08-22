@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import local.apichlkostner.myminecraftmod.block.BlockTable;
+import local.apichlkostner.myminecraftmod.block.BlockBeamer;
 import local.apichlkostner.myminecraftmod.block.IBlock;
 import local.apichlkostner.myminecraftmod.config.Constants;
 import local.apichlkostner.myminecraftmod.item.IItem;
