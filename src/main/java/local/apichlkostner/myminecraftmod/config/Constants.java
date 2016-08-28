@@ -11,6 +11,8 @@ public class Constants {
 	public static final String CLIENTSIDE = MOD_PATH + ".proxy.ClientProxy";
 	public static final String SERVERSIDE = MOD_PATH + ".proxy.ServerProxy";
 	
+	public static final String CHANNEL = MODID + "Channel";
+	
 	public static final int ArmorMaterialDurability = 35;
 	public static final int[] ArmorMaterialReductionAmounts = {2, 7, 5, 2}; 
 	public static final int ArmorMaterialEnchantability = 9;
@@ -34,6 +36,9 @@ public class Constants {
 	public static final String ItemTableName = "ItemTable";
 	public static final String ItemTableTexture = MODID + ":" + "itemtable";
 	
+	public static final String ItemBeamKeyName = "ItemBeamKey";
+	public static final String ItemBeamKeyTexture = MODID + ":" + "itembeamkey";
+		
 	public static final String ItemSteelIngotName = "SteelIngot";
 	public static final String ItemSteelIngotTexture = MODID + ":" + "itemsteelingot";
 	
@@ -50,5 +55,7 @@ public class Constants {
 	public static final String BlockTableTexture = MODID + ":" + "blocktable";
 	public static final Material BlockTableMaterial = Material.wood;
 	
-	
+	public static final String BlockBeamerName = "BlockBeamer";
+	public static final String BlockBeamerTexture = MODID + ":" + "blockbeamer";
+	public static final Material BlockBeamerMaterial = Material.glass;
 }

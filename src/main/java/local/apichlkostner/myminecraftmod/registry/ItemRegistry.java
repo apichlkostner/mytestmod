@@ -5,6 +5,7 @@ import local.apichlkostner.myminecraftmod.config.Constants;
 import local.apichlkostner.myminecraftmod.item.Baguette;
 import local.apichlkostner.myminecraftmod.item.BaguetteRaw;
 import local.apichlkostner.myminecraftmod.item.IItem;
+import local.apichlkostner.myminecraftmod.item.ItemBeamKey;
 import local.apichlkostner.myminecraftmod.item.ItemSteelArmor;
 import local.apichlkostner.myminecraftmod.item.ItemSteelIngot;
 import local.apichlkostner.myminecraftmod.item.ItemSteelPickaxe;
@@ -27,6 +28,7 @@ public class ItemRegistry {
 	public static final IItem itemSteelPlate = new ItemSteelArmor(steelArmorMaterial, 0, 1);
 	public static final IItem itemSteelLeggings = new ItemSteelArmor(steelArmorMaterial, 0, 2);
 	public static final IItem itemSteelBoots = new ItemSteelArmor(steelArmorMaterial, 0, 3);
+	public static final IItem itemBeamKey = new ItemBeamKey();
 	public static final IItem baguette = new Baguette();
 	public static final IItem baguetteRaw = new BaguetteRaw();
 	
@@ -38,6 +40,7 @@ public class ItemRegistry {
 			itemSteelPlate,
 			itemSteelLeggings,
 			itemSteelBoots,
+			itemBeamKey,
 			baguette,
 			baguetteRaw
 	};

@@ -1,5 +1,6 @@
-item.ItemTable.name=Tisch
 tile.BlockTable.name=TischBlock
+tile.BlockBeamer.name=Beamer
+item.ItemTable.name=Tisch
 item.Baguette.name=Baguette
 item.BaguetteRaw.name=rohes Baguette
 item.SteelIngot.name=Redstone-Stahlbarren
@@ -8,3 +9,4 @@ item.SteelArmorHelmet.name=Redstone Stahlhelm
 item.SteelArmorPlate.name=Redstone Stahlplatte
 item.SteelArmorLeggins.name=Redstone Stahlhose
 item.SteelArmorBoots.name=Redstone Stahlschuhe
+item.ItemBeamKey.name=Beam-Schluessel

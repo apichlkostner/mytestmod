@@ -11,8 +11,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import local.apichlkostner.myminecraftmod.block.BlockBeamer;
 import local.apichlkostner.myminecraftmod.block.IBlock;
 import local.apichlkostner.myminecraftmod.config.Constants;
+import local.apichlkostner.myminecraftmod.entity.TileEntityBeamer;
 import local.apichlkostner.myminecraftmod.item.IItem;
 import local.apichlkostner.myminecraftmod.item.ItemSteelPickaxe;
+import local.apichlkostner.myminecraftmod.network.NetworkHandler;
 import local.apichlkostner.myminecraftmod.proxy.IProxy;
 import local.apichlkostner.myminecraftmod.registry.BlockRegistry;
 import local.apichlkostner.myminecraftmod.registry.ItemRegistry;
@@ -35,6 +37,8 @@ public class MyMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		NetworkHandler.init();
+		
 		// shapeless crafting
 		ItemStack stackWool = new ItemStack(Blocks.wool);
 		ItemStack stackWeb = new ItemStack(Blocks.web, 5);
@@ -63,6 +67,9 @@ public class MyMod {
 		for (IBlock block : BlockRegistry.blocks) {
 			block.init();
 		}
+		
+		GameRegistry.registerTileEntity(TileEntityBeamer.class, "MyMod_Beamer");
+		
 	}
 	
 	@EventHandler

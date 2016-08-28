@@ -8,3 +8,5 @@ item.SteelArmorHelmet.name=Redstone steel helmet
 item.SteelArmorPlate.name=Redstone steel plate
 item.SteelArmorLeggins.name=Redstone steel leggings
 item.SteelArmorBoots.name=Redstone steel boots
+item.ItemBeamKey.name=Beam key
+tile.BlockBeamer.name=Beamer
