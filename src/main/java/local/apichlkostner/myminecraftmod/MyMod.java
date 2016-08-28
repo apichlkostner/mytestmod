@@ -15,6 +15,7 @@ import local.apichlkostner.myminecraftmod.entity.TileEntityBeamer;
 import local.apichlkostner.myminecraftmod.item.IItem;
 import local.apichlkostner.myminecraftmod.item.ItemSteelPickaxe;
 import local.apichlkostner.myminecraftmod.network.NetworkHandler;
+import local.apichlkostner.myminecraftmod.network.TileEntityDescriptionHandler;
 import local.apichlkostner.myminecraftmod.proxy.IProxy;
 import local.apichlkostner.myminecraftmod.registry.BlockRegistry;
 import local.apichlkostner.myminecraftmod.registry.ItemRegistry;
@@ -38,6 +39,7 @@ public class MyMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		NetworkHandler.init();
+		TileEntityDescriptionHandler.init();
 		
 		// shapeless crafting
 		ItemStack stackWool = new ItemStack(Blocks.wool);

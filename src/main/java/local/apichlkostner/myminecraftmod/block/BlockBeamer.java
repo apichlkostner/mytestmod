@@ -8,7 +8,6 @@ import local.apichlkostner.myminecraftmod.config.Constants;
 import local.apichlkostner.myminecraftmod.entity.TileEntityBeamer;
 import local.apichlkostner.myminecraftmod.item.ItemBeamKey;
 import local.apichlkostner.myminecraftmod.network.NetworkHandler;
-import local.apichlkostner.myminecraftmod.network.TileEntityBeamerInit;
 import local.apichlkostner.myminecraftmod.registry.ItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;

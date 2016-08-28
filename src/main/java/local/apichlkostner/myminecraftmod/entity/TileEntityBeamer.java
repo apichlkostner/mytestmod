@@ -7,7 +7,7 @@ import io.netty.buffer.Unpooled;
 import local.apichlkostner.myminecraftmod.config.Constants;
 import local.apichlkostner.myminecraftmod.network.MessagePlayerBeam;
 import local.apichlkostner.myminecraftmod.network.NetworkHandler;
-import local.apichlkostner.myminecraftmod.network.TileEntityBeamerInit;
+import local.apichlkostner.myminecraftmod.network.TileEntityDescriptionHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -16,7 +16,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChunkCoordinates;
 
 
-public class TileEntityBeamer extends TileEntity {
+public class TileEntityBeamer extends TileEntity implements ITileEntityDescriptionWrapper {
 
 	private ChunkCoordinates beamCoordinates;
 	private boolean beamCoordinatesSet;
@@ -34,23 +34,23 @@ public class TileEntityBeamer extends TileEntity {
 		buf.writeInt(yCoord);
 		buf.writeInt(zCoord);
 		writeToPacket(buf);
-		return new FMLProxyPacket(buf, Constants.CHANNEL);
+		return new FMLProxyPacket(buf, TileEntityDescriptionHandler.CHANNEL);
 	}
 
 
 	public void writeToPacket(ByteBuf buf){
-		ByteBufUtils.writeVarInt(buf, beamCoordinates.posX, 100000);
-		ByteBufUtils.writeVarInt(buf, beamCoordinates.posY, 100000);
-		ByteBufUtils.writeVarInt(buf, beamCoordinates.posZ, 100000);
+		buf.writeInt(beamCoordinates.posX);
+		buf.writeInt(beamCoordinates.posY);
+		buf.writeInt(beamCoordinates.posZ);
+		buf.writeBoolean(beamCoordinatesSet);
 	}
 
 
 	public void readFromPacket(ByteBuf buf){
-		beamCoordinates.posX = ByteBufUtils.readVarInt(buf, 10000);
-		beamCoordinates.posY = ByteBufUtils.readVarInt(buf, 10000);
-		beamCoordinates.posZ = ByteBufUtils.readVarInt(buf, 10000);
-
-		//worldObj.markBlockRangeForRenderUpdate(xCoord, yCoord, zCoord, xCoord, yCoord, zCoord);
+		beamCoordinates.posX = buf.readInt();
+		beamCoordinates.posY = buf.readInt();
+		beamCoordinates.posZ = buf.readInt();
+		beamCoordinatesSet   = buf.readBoolean();
 	}
 
 	@Override
@@ -80,20 +80,12 @@ public class TileEntityBeamer extends TileEntity {
 	}
 
 	public void beamPlayer(EntityPlayer player) {
-		if (!player.worldObj.isRemote && beamCoordinatesSet){
-			player.setPosition(beamCoordinates.posX + 0.5, beamCoordinates.posY + 1 + player.yOffset, beamCoordinates.posZ + 0.5);
-			
-			NetworkHandler.INSTANCE.sendToAll(
-					new MessagePlayerBeam(beamCoordinates.posX + 0.5f, 
-							beamCoordinates.posY + 1f + player.yOffset, 
-							beamCoordinates.posZ + 0.5f));
-			/*NetworkHandler.INSTANCE.sendToAll(
-					new MessagePlayerBeam(player.posX, player.posY, player.posZ));*/
+		if (beamCoordinatesSet) {
+			// there is enough space for the player at the beam location
+			if (player.worldObj.isAirBlock(beamCoordinates.posX, beamCoordinates.posY + 1, beamCoordinates.posZ)
+				&& player.worldObj.isAirBlock(beamCoordinates.posX, beamCoordinates.posY + 2, beamCoordinates.posZ)) {
+					player.setPosition(beamCoordinates.posX + 0.5, beamCoordinates.posY + 1 + player.yOffset, beamCoordinates.posZ + 0.5);
+				}
 		}
-		/*
-		NetworkHandler.INSTANCE.sendToAll(
-				new MessagePlayerBeam(beamCoordinates.posX + 0.5f, 
-						beamCoordinates.posY + 1f + player.yOffset, 
-						beamCoordinates.posZ + 0.5f));*/
 	}
 }

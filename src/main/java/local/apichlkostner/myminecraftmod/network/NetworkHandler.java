@@ -15,7 +15,5 @@ public class NetworkHandler{
         INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(Constants.MODID);
         
         INSTANCE.registerMessage(MessagePlayerBeam.class, MessagePlayerBeam.class, 0, Side.CLIENT);
-        INSTANCE.registerMessage(TileEntityBeamerInit.class, TileEntityBeamerInit.class, 1, Side.CLIENT);
-        INSTANCE.registerMessage(TileEntityBeamerInit.class, TileEntityBeamerInit.class, 2, Side.SERVER);
     }   
 }
