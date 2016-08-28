@@ -31,7 +31,7 @@ import net.minecraftforge.common.util.EnumHelper;
 @Mod(modid = Constants.MODID, name = Constants.MODNAME, version = Constants.VERSION)
 public class MyMod {
 	@SidedProxy(clientSide = Constants.CLIENTSIDE, serverSide = Constants.SERVERSIDE)
-	private static IProxy proxy;
+	public static IProxy proxy;
 	
 	@Instance(Constants.MODNAME)
 	public static MyMod instance;

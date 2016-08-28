@@ -6,6 +6,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.ChannelHandler.Sharable;
+import local.apichlkostner.myminecraftmod.MyMod;
 import local.apichlkostner.myminecraftmod.config.Constants;
 import local.apichlkostner.myminecraftmod.entity.ITileEntityDescriptionWrapper;
 import net.minecraft.client.Minecraft;
@@ -25,7 +26,7 @@ public class TileEntityDescriptionHandler extends SimpleChannelInboundHandler<FM
         int x = buf.readInt();
         int y = buf.readInt();
         int z = buf.readInt();
-        TileEntity te = Minecraft.getMinecraft().thePlayer.worldObj.getTileEntity(x, y, z);
+        TileEntity te = MyMod.proxy.getPlayerClientSide().worldObj.getTileEntity(x, y, z);
         if(te instanceof ITileEntityDescriptionWrapper) {
             ((ITileEntityDescriptionWrapper)te).readFromPacket(buf);
         }
