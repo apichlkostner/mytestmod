@@ -13,6 +13,8 @@ public class Constants {
 	
 	public static final String CHANNEL = MODID + "Channel";
 	
+	public static final int BeamTime = 30;
+	
 	public static final int ArmorMaterialDurability = 35;
 	public static final int[] ArmorMaterialReductionAmounts = {2, 7, 5, 2}; 
 	public static final int ArmorMaterialEnchantability = 9;
