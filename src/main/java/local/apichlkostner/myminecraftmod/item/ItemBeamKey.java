@@ -24,7 +24,7 @@ public class ItemBeamKey extends Item implements IItem {
 		ItemStack stackBeamKey = new ItemStack(this);
 		
 		GameRegistry.addRecipe(stackBeamKey, new Object[]{"iii", "  i", "   ",
-				'w', Items.iron_ingot});
+				'i', Items.iron_ingot});
 	}
 
 	

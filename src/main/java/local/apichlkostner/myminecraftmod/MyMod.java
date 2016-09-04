@@ -79,6 +79,10 @@ public class MyMod {
 		for (IItem item : ItemRegistry.items) {
 			item.registerReceipe();
 		}
+		
+		for (IBlock block : BlockRegistry.blocks) {
+			block.registerReceipe();
+		}
 	}
 	
 	@EventHandler

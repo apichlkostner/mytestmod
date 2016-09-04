@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -36,6 +37,14 @@ public class BlockBeamer extends BlockContainer implements IBlock {
 		GameRegistry.registerBlock(this, getUnlocalizedName().substring(5));
 	}
 
+	@Override
+	public void registerReceipe() {
+		ItemStack stackBeamer = new ItemStack(this);
+		
+		GameRegistry.addRecipe(stackBeamer, new Object[]{"sss", "s s", "sss",
+				's', ItemRegistry.itemSteelIngot});
+	}
+	
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
 	{
@@ -65,9 +74,7 @@ public class BlockBeamer extends BlockContainer implements IBlock {
 		}
 		
 		return true;
-	}
-
-	
+	}	
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int data) {
